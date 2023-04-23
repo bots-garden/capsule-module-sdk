@@ -1,4 +1,4 @@
-// Package capsule SDK
+// Package capsule SDK for WASM plugin
 package capsule
 
 const isFailure = rune('F')
