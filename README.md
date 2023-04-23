@@ -1,14 +1,36 @@
-# capsule-module-sdk
+# Capsule Module SDK
 
 🚧 this is a work in progress
 
-## Tips
+This SDK allows to create and manage **WebAssembly modules** for host applications using the [Capsule Host Application SDK](https://github.com/bots-garden/capsule-host-sdk).
 
-```bash
-go work init
-go work use ./samples/simple
-go work use ./samples/simple.json
+> The Capsule Host SDK use the **[Wazero](https://github.com/tetratelabs/wazero)** runtime to run the host application.
+
+## Getting started: the capsule plugin
+
+```golang
+package main
+
+import (
+	capsule "github.com/bots-garden/capsule-module-sdk"
+)
+
+func main() {
+	capsule.SetHandle(Handle)
+}
+
+// Handle function
+func Handle(param []byte) ([]byte, error) {
+
+	capsule.Log("🟣 from the plugin: " + string(param))
+	capsule.Print("💜 from the plugin: " + string(param))
+
+	return []byte("Hello " + string(param)), nil
+}
 ```
-> see: 
-> - https://go.dev/doc/tutorial/workspaces
-> - https://softchris.github.io/golang-book/03-projects/03-create-shared-module/
+
+## Getting started: the host application
+
+👀 https://github.com/bots-garden/capsule-host-sdk#capsule-host-sdk
+
+

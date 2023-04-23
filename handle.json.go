@@ -13,7 +13,7 @@ func SetHandleJSON(function func(param *fastjson.Value) ([]byte, error)) {
 //export callHandleJSON
 func callHandleJSON(subjectPosition *uint32, length int) uint64 {
 	// read the memory to get the parameter
-	subjectBytes := read(subjectPosition, length)
+	subjectBytes := readBufferFromMemory(subjectPosition, length)
 
 	parser := fastjson.Parser{}
     jsonValue, err := parser.ParseBytes(subjectBytes)

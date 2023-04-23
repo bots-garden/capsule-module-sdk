@@ -2,11 +2,14 @@ package capsule
 
 import "unsafe"
 
+/*
 func read(bufferPosition *uint32, length int) []byte {
 	return readBufferFromMemory(bufferPosition, length)
 }
+*/
 
-// readBufferFromMemory returns a buffer from WebAssembly
+
+// readBufferFromMemory returns a buffer
 func readBufferFromMemory(bufferPosition *uint32, length int) []byte {
 	subjectBuffer := make([]byte, length)
 	pointer := uintptr(unsafe.Pointer(bufferPosition))
@@ -15,6 +18,11 @@ func readBufferFromMemory(bufferPosition *uint32, length int) []byte {
 		subjectBuffer[i] = byte(s)
 	}
 	return subjectBuffer
+}
+
+// ReadBufferFromMemory returns a buffer
+func ReadBufferFromMemory(bufferPosition *uint32, length int) []byte {
+	return readBufferFromMemory(bufferPosition, length)
 }
 
 // copyBufferToMemory returns a single value (a kind of pair with position and length)
@@ -26,4 +34,9 @@ func copyBufferToMemory(buffer []byte) uint64 {
 	size := uint32(len(buffer))
 
 	return (uint64(ptr) << uint64(32)) | uint64(size)
+}
+
+// CopyBufferToMemory returns a single value
+func CopyBufferToMemory(buffer []byte) uint64 {
+	return copyBufferToMemory(buffer)
 }
