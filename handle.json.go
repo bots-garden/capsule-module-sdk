@@ -11,7 +11,7 @@ func SetHandleJSON(function func(param *fastjson.Value) ([]byte, error)) {
 }
 
 //export callHandleJSON
-func callHandleJSON(subjectPosition *uint32, length int) uint64 {
+func callHandleJSON(subjectPosition *uint32, length uint32) uint64 {
 	// read the memory to get the parameter
 	subjectBytes := readBufferFromMemory(subjectPosition, length)
 

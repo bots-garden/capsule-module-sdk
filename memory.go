@@ -10,10 +10,10 @@ func read(bufferPosition *uint32, length int) []byte {
 
 
 // readBufferFromMemory returns a buffer
-func readBufferFromMemory(bufferPosition *uint32, length int) []byte {
+func readBufferFromMemory(bufferPosition *uint32, length uint32) []byte {
 	subjectBuffer := make([]byte, length)
 	pointer := uintptr(unsafe.Pointer(bufferPosition))
-	for i := 0; i < length; i++ {
+	for i := 0; i < int(length); i++ {
 		s := *(*int32)(unsafe.Pointer(pointer + uintptr(i)))
 		subjectBuffer[i] = byte(s)
 	}
@@ -21,7 +21,7 @@ func readBufferFromMemory(bufferPosition *uint32, length int) []byte {
 }
 
 // ReadBufferFromMemory returns a buffer
-func ReadBufferFromMemory(bufferPosition *uint32, length int) []byte {
+func ReadBufferFromMemory(bufferPosition *uint32, length uint32) []byte {
 	return readBufferFromMemory(bufferPosition, length)
 }
 

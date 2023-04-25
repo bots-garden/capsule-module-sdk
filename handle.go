@@ -8,7 +8,7 @@ func SetHandle(function func(param []byte) ([]byte, error)) {
 }
 
 //export callHandle
-func callHandle(subjectPosition *uint32, length int) uint64 {
+func callHandle(subjectPosition *uint32, length uint32) uint64 {
 	// read the memory to get the parameter
 	subjectBytes := readBufferFromMemory(subjectPosition, length)
 
