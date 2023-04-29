@@ -4,7 +4,6 @@
       "golang.go",
       "bungcip.better-toml",
       "huytd.github-light-monochrome",
-      "vscjava.vscode-java-pack",
       "aaron-bond.better-comments",
     ]
   }

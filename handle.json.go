@@ -17,7 +17,9 @@ func callHandleJSON(subjectPosition *uint32, length uint32) uint64 {
 
 	parser := fastjson.Parser{}
     jsonValue, err := parser.ParseBytes(subjectBytes)
-	//TODO: handle error
+	if err != nil {
+		return failure([]byte(err.Error()))
+	}
 
 	// call the handle function
 	retValue, err := handleJSONFunction(jsonValue)

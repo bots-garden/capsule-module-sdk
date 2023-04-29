@@ -40,3 +40,30 @@ func copyBufferToMemory(buffer []byte) uint64 {
 func CopyBufferToMemory(buffer []byte) uint64 {
 	return copyBufferToMemory(buffer)
 }
+
+
+// getStringPosSize returns the memory position and size of the string
+func getStringPosSize(s string) (uint32, uint32) {
+	buff := []byte(s)
+	ptr := &buff[0]
+	unsafePtr := uintptr(unsafe.Pointer(ptr))
+	return uint32(unsafePtr), uint32(len(buff))
+}
+
+// getBufferPosSize returns the memory position and size of the buffer
+func getBufferPosSize(buff []byte) (uint32, uint32) {
+	ptr := &buff[0]
+	unsafePtr := uintptr(unsafe.Pointer(ptr))
+	return uint32(unsafePtr), uint32(len(buff))
+}
+
+/* 
+Allocate the in-Wasm memory region and returns its pointer to hosts.
+The region is supposed to store random strings generated in hosts
+*/
+//export allocateBuffer
+func allocateBuffer(size uint32) *byte {
+	buf := make([]byte, size)
+	return &buf[0]
+}
+

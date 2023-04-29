@@ -4,4 +4,5 @@ use (
 	./samples/simple
 	./samples/simple.json
 	./samples/simple.log
+	./samples/simple.talk	
 )

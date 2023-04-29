@@ -1,11 +1,12 @@
 package capsule
 
 //export hostLogString
-func hostLogString(posSizePairValue uint64) uint32
+func hostLogString(messagePosition, messageLength uint32) uint32
 
 // Log : call host function: hostLogString
 // Print a string
 func Log(message string) {
-	posSizePairValue := copyBufferToMemory([]byte(message))
-	hostLogString(posSizePairValue)
+	messagePosition, messageSize := getStringPosSize(message)
+
+	hostLogString(messagePosition, messageSize)
 }
