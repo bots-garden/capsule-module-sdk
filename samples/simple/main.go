@@ -11,15 +11,15 @@ import (
 
 func main() {
 	/*
-	if filepath.Ext(os.Args[0]) == ".wasm" {
-		// CLI mode
-		value, err := Handle([]byte(os.Args[1]))
-		fmt.Println(string(value), err)
-	} else {
-		// Plugin mode
-		capsule.SetHandle(Handle)
-		
-	}
+		if filepath.Ext(os.Args[0]) == ".wasm" {
+			// CLI mode
+			value, err := Handle([]byte(os.Args[1]))
+			fmt.Println(string(value), err)
+		} else {
+			// Plugin mode
+			capsule.SetHandle(Handle)
+
+		}
 	*/
 	capsule.SetHandle(Handle)
 }
