@@ -2,13 +2,6 @@ package capsule
 
 import "unsafe"
 
-/*
-func read(bufferPosition *uint32, length int) []byte {
-	return readBufferFromMemory(bufferPosition, length)
-}
-*/
-
-
 // readBufferFromMemory returns a buffer
 func readBufferFromMemory(bufferPosition *uint32, length uint32) []byte {
 	subjectBuffer := make([]byte, length)

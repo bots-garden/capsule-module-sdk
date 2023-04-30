@@ -17,7 +17,8 @@ type HTTPRequest struct {
 
 // HTTPResponse is the data of the http response
 type HTTPResponse struct {
-	Body string
+	JSONBody string
+	TextBody string
 	Headers  string
 	StatusCode int
 }
@@ -49,13 +50,26 @@ func callHandleHTTP(JSONDataPos *uint32, JSONDataSize uint32) uint64 {
 	// call the handle function
 	retValue, err := handleHTTPFunction(httpRequestParam)
 
-	//TODO: return an HTTPResponse
 	// return failure or success
 	if err != nil {
 		return failure([]byte(err.Error()))
 	}
 
-	jsonHTTPResponse := `{"Body":"`+retValue.Body+`","Headers":`+retValue.Headers+`,"StatusCode":`+strconv.Itoa(retValue.StatusCode)+`}`
+	var jsonBody string
+	if len(retValue.JSONBody) == 0 {
+		jsonBody = "{}"
+	} else {
+		jsonBody = retValue.JSONBody
+	}
+	
+	var textBody string
+	if len(retValue.TextBody) == 0 {
+		textBody = ""
+	} else {
+		textBody = retValue.TextBody
+	}
+
+	jsonHTTPResponse := `{"JSONBody":`+jsonBody+`,"TextBody":"`+textBody+`","Headers":`+retValue.Headers+`,"StatusCode":`+strconv.Itoa(retValue.StatusCode)+`}`
 
 	// first byte == 82
 	return success([]byte(jsonHTTPResponse))
