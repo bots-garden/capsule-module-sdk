@@ -2,4 +2,5 @@
 *.wasm
 capsule
 capsule-http
+site
 
