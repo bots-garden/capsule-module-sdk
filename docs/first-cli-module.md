@@ -17,7 +17,7 @@ go mod init cli-say-hello
 
 Install the Capsule MDK dependencies:
 ```bash
-go https://github.com/bots-garden/capsule-module-sdk
+go get github.com/bots-garden/capsule-module-sdk
 ```
 
 Create a new file `main.go` in `cli-say-hello`:

@@ -15,6 +15,12 @@ Initialize a new project in `say-hello`:
 go mod init say-hello
 ```
 
+Install the Capsule MDK dependencies:
+```bash
+go get github.com/bots-garden/capsule-module-sdk
+```
+
+
 Create a new file `main.go` in `say-hello`:
 
 ```go
