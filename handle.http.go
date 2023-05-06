@@ -6,22 +6,7 @@ import (
 	"github.com/valyala/fastjson"
 )
 
-// HTTPRequest is the data of the http request
-type HTTPRequest struct {
-	Body string
-	URI      string
-	Method   string
-	Headers  string
-}
-//JsonHTTPRequest ?
 
-// HTTPResponse is the data of the http response
-type HTTPResponse struct {
-	JSONBody string
-	TextBody string
-	Headers  string
-	StatusCode int
-}
 
 var handleHTTPFunction func(param HTTPRequest) (HTTPResponse, error)
 
@@ -42,6 +27,8 @@ func callHandleHTTP(JSONDataPos *uint32, JSONDataSize uint32) uint64 {
 	}
 	httpRequestParam := HTTPRequest{
 		Body: string(JSONData.GetStringBytes("Body")),
+		//JSONBody: string(JSONData.GetStringBytes("JSONBody")), //! to use in the future
+		//TextBody: string(JSONData.GetStringBytes("TextBody")), //! to use in the future
 		URI:      string(JSONData.GetStringBytes("URI")),
 		Method:   string(JSONData.GetStringBytes("Method")),
 		Headers:  string(JSONData.GetStringBytes("Headers")),

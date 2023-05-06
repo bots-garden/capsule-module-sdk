@@ -1,0 +1,48 @@
+site_name: Capsule Module SDK (MDK)
+site_url: https://bots-garden.github.io/capsule-module-sdk/
+site_author: Philippe Charrière (@k33g)
+site_description: >-
+  **Capsule Module SDK (MDK)** is a **WebAssembly SDK for the Capsule project.
+# Repository
+repo_name: bots-garden/capsule-module-sdk
+repo_url: https://github.com/bots-garden/capsule-module-sdk
+
+# Copyright
+copyright: Copyright &copy; 2023 - 2024 Philippe Charrière
+
+nav:
+    - 🏠 Home: index.md
+    - 🚀 Getting Started: getting-started.md
+    - 📝 Developer guide:
+      - First CLI module: first-cli-module.md
+      - First HTTP module: first-http-module.md
+    - 🛠️ Host functions: host-functions.md
+ 
+theme:
+  name: material
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - pymdownx.highlight:
+      use_pygments: true
+      auto_title: false
+      linenums: true
+      anchor_linenums: true
+  - pymdownx.superfences
+
+
+
+
+#theme:
+#    name: readthedocs
+#    highlightjs: true
+#    hljs_languages:
+#        - yaml
+#        - rust
+#        - golang
+#        - bash
+#        - javascript

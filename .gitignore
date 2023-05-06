@@ -1,2 +1,5 @@
 .DS_Store
 *.wasm
+capsule
+capsule-http
+

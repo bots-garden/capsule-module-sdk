@@ -1,4 +1,4 @@
-# Capsule Module SDK
+# Capsule Module SDK (Capsule MDK)
 
 🚧 this is a work in progress
 

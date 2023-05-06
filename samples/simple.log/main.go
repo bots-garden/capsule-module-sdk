@@ -1,11 +1,9 @@
+// 🚧 THIS IS A WORK IN PROGRESS 🚧
+
 // Package main
 package main
 
 import (
-	//"fmt"
-	//"os"
-	//"path/filepath"
-
 	capsule "github.com/bots-garden/capsule-module-sdk"
 )
 

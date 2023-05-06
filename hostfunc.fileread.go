@@ -14,7 +14,7 @@ func ReadFile(filePath string) ([]byte, error) {
 	var responseBufferPtr *uint32
 	var responseBufferSize uint32
 
-	// Send the lessage to the host
+	// Send the message to the host
 	hostReadFile(
 		filePathPosition, filePathLength,
 		&responseBufferPtr, &responseBufferSize)

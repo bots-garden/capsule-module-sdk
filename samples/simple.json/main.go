@@ -1,10 +1,12 @@
+// 🚧 THIS IS A WORK IN PROGRESS 🚧
+
 // Package main
 package main
 
 import (
 	"strconv"
 
-	capsule "github.com/bots-garden/capsule-module-sdk"
+	"github.com/bots-garden/capsule-module-sdk"
 	"github.com/valyala/fastjson"
 )
 
