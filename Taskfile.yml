@@ -25,6 +25,6 @@ tasks:
     cmds:
       - echo "📦 Generating release..."
       - git add .
-      - git commit -m "📦 updates modules for ${TAG}"
+      - git commit -m "📦 updates MDK for ${TAG}"
       - git tag ${TAG}
       - git push origin main ${TAG}
