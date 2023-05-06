@@ -3,8 +3,8 @@ go 1.20
 use (
 	./samples/simple
 	./samples/simple.json
-	./samples/simple.log
-	./samples/simple.talk	
+	./samples/simple-hello
+	./samples/simple-talk	
 	./samples/say-hello
 	./samples/cli-say-hello
 	./samples/http-say-hello
