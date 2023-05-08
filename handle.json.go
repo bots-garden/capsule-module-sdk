@@ -3,7 +3,6 @@ package capsule
 import "github.com/valyala/fastjson"
 
 
-
 var handleJSONFunction func(param *fastjson.Value) ([]byte, error)
 
 // SetHandleJSON sets the handle function
