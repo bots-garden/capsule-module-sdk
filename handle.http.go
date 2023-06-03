@@ -1,6 +1,7 @@
 package capsule
 
 import (
+	"encoding/base64"
 	"strconv"
 
 	"github.com/valyala/fastjson"
@@ -53,7 +54,9 @@ func callHandleHTTP(JSONDataPos *uint32, JSONDataSize uint32) uint64 {
 	if len(retValue.TextBody) == 0 {
 		textBody = ""
 	} else {
-		textBody = retValue.TextBody
+		// avoid special characters in jsonString
+		textBody = base64.StdEncoding.EncodeToString([]byte(retValue.TextBody))
+		//textBody = retValue.TextBody
 	}
 
 	jsonHTTPResponse := `{"JSONBody":`+jsonBody+`,"TextBody":"`+textBody+`","Headers":`+retValue.Headers+`,"StatusCode":`+strconv.Itoa(retValue.StatusCode)+`}`
