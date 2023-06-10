@@ -1,6 +1,7 @@
 package capsule
 
 
+
 //export hostTalk
 func hostTalk(messagePosition, messageLength uint32, returnValuePosition **uint32, returnValueLength *uint32) uint32
 
