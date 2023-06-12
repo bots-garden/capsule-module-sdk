@@ -1,7 +1,7 @@
 # Capsule Module SDK
 
 !!! info "What's new?"
-    - `v0.0.4`: ✨ Add `Success` and `Failure` functions (public functionc to call `success` and `failure`) and `StringifyHTTPResponse`
+    - `v0.0.4`: ✨ Add the `Success` and `Failure` functions (public functions to call `success` and `failure`) and the `StringifyHTTPResponse` function
     - `v0.0.3`: ✨ Encode `retValue.TextBody` to avoid special characters in jsonString
     - `v0.0.2`: ✨ Redis support
     - `v0.0.1`: 🎉 first release
