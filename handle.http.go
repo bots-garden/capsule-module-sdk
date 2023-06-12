@@ -7,8 +7,6 @@ import (
 	"github.com/valyala/fastjson"
 )
 
-
-
 var handleHTTPFunction func(param HTTPRequest) (HTTPResponse, error)
 
 // SetHandleHTTP sets the handle function
@@ -16,9 +14,33 @@ func SetHandleHTTP(function func(param HTTPRequest) (HTTPResponse, error)) {
 	handleHTTPFunction = function
 }
 
+// StringifyHTTPResponse converts a HTTPResponse to a string
+func StringifyHTTPResponse(response HTTPResponse) string {
+	
+	var jsonBody string
+	if len(response.JSONBody) == 0 {
+		jsonBody = "{}"
+	} else {
+		jsonBody = response.JSONBody
+	}
+
+	var textBody string
+	if len(response.TextBody) == 0 {
+		textBody = ""
+	} else {
+		// avoid special characters in jsonString
+		textBody = base64.StdEncoding.EncodeToString([]byte(response.TextBody))
+		//textBody = retValue.TextBody
+	}
+
+	jsonHTTPResponse := `{"JSONBody":` + jsonBody + `,"TextBody":"` + textBody + `","Headers":` + response.Headers + `,"StatusCode":` + strconv.Itoa(response.StatusCode) + `}`
+
+	return jsonHTTPResponse
+}
+
 //export callHandleHTTP
 func callHandleHTTP(JSONDataPos *uint32, JSONDataSize uint32) uint64 {
-	
+
 	parser := fastjson.Parser{}
 
 	JSONDataBuffer := readBufferFromMemory(JSONDataPos, JSONDataSize)
@@ -30,9 +52,9 @@ func callHandleHTTP(JSONDataPos *uint32, JSONDataSize uint32) uint64 {
 		Body: string(JSONData.GetStringBytes("Body")),
 		//JSONBody: string(JSONData.GetStringBytes("JSONBody")), //! to use in the future
 		//TextBody: string(JSONData.GetStringBytes("TextBody")), //! to use in the future
-		URI:      string(JSONData.GetStringBytes("URI")),
-		Method:   string(JSONData.GetStringBytes("Method")),
-		Headers:  string(JSONData.GetStringBytes("Headers")),
+		URI:     string(JSONData.GetStringBytes("URI")),
+		Method:  string(JSONData.GetStringBytes("Method")),
+		Headers: string(JSONData.GetStringBytes("Headers")),
 	}
 
 	// call the handle function
@@ -49,7 +71,7 @@ func callHandleHTTP(JSONDataPos *uint32, JSONDataSize uint32) uint64 {
 	} else {
 		jsonBody = retValue.JSONBody
 	}
-	
+
 	var textBody string
 	if len(retValue.TextBody) == 0 {
 		textBody = ""
@@ -59,7 +81,7 @@ func callHandleHTTP(JSONDataPos *uint32, JSONDataSize uint32) uint64 {
 		//textBody = retValue.TextBody
 	}
 
-	jsonHTTPResponse := `{"JSONBody":`+jsonBody+`,"TextBody":"`+textBody+`","Headers":`+retValue.Headers+`,"StatusCode":`+strconv.Itoa(retValue.StatusCode)+`}`
+	jsonHTTPResponse := `{"JSONBody":` + jsonBody + `,"TextBody":"` + textBody + `","Headers":` + retValue.Headers + `,"StatusCode":` + strconv.Itoa(retValue.StatusCode) + `}`
 
 	// first byte == 82
 	return success([]byte(jsonHTTPResponse))

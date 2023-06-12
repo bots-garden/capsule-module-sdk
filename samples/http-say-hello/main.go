@@ -12,14 +12,14 @@ func main() {
 	capsule.SetHandleHTTP(Handle)
 }
 
-// Handle function 
+// Handle function
 func Handle(param capsule.HTTPRequest) (capsule.HTTPResponse, error) {
-	
+
 	capsule.Print("📝: " + param.Body)
 	capsule.Print("🔠: " + param.Method)
 	capsule.Print("🌍: " + param.URI)
 	capsule.Print("👒: " + param.Headers)
-	
+
 	var p fastjson.Parser
 	jsonBody, err := p.Parse(param.Body)
 	if err != nil {
@@ -29,8 +29,8 @@ func Handle(param capsule.HTTPRequest) (capsule.HTTPResponse, error) {
 	capsule.Log(message)
 
 	response := capsule.HTTPResponse{
-		JSONBody: `{"message": "`+message+`"}`,
-		Headers: `{"Content-Type": "application/json; charset=utf-8"}`,
+		JSONBody:   `{"message": "` + message + `"}`,
+		Headers:    `{"Content-Type": "application/json; charset=utf-8"}`,
 		StatusCode: 200,
 	}
 

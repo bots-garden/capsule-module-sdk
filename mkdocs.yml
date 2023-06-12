@@ -17,6 +17,7 @@ nav:
       - First CLI module: first-cli-module.md
       - First HTTP module: first-http-module.md
     - 🛠️ Host functions: host-functions.md
+    - 🧰 Helpers: helpers.md
  
 theme:
   name: material
