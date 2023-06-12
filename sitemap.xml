@@ -2,27 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://bots-garden.github.io/capsule-module-sdk/</loc>
-         <lastmod>2023-05-14</lastmod>
+         <lastmod>2023-06-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bots-garden.github.io/capsule-module-sdk/first-cli-module/</loc>
-         <lastmod>2023-05-14</lastmod>
+         <lastmod>2023-06-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bots-garden.github.io/capsule-module-sdk/first-http-module/</loc>
-         <lastmod>2023-05-14</lastmod>
+         <lastmod>2023-06-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bots-garden.github.io/capsule-module-sdk/getting-started/</loc>
-         <lastmod>2023-05-14</lastmod>
+         <lastmod>2023-06-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bots-garden.github.io/capsule-module-sdk/helpers/</loc>
+         <lastmod>2023-06-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bots-garden.github.io/capsule-module-sdk/host-functions/</loc>
-         <lastmod>2023-05-14</lastmod>
+         <lastmod>2023-06-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
