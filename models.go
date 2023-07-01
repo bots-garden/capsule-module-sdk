@@ -22,10 +22,10 @@ type HTTPResponse struct {
 }
 
 // strSeparator is use to create a string from a slice
-// ex: "Content-Type":"application/json; charset=utf-8","PRIVATE-TOKEN":"glpat-mmysLDdMx532zxHgsgzF"
+// ex: "Content-Type":"application/json; charset=utf-8","PRIVATE-TOKEN":"glpat-some-letters" 
 const strSeparator = ","
 // fieldSeparator is used to create a slice from a map
-// ex: "PRIVATE-TOKEN":"glpat-mmysLDdMx532zxHgsgzF"
+// ex: "PRIVATE-TOKEN":"glpat-some-letters"
 const fieldSeparator = ":"
 // quote is used to create a slice from a map
 // to add double quote before and after a fieldname or a value
