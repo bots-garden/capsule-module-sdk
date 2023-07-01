@@ -1,7 +1,9 @@
 // Package capsule SDK for WASM plugin
 package capsule
 
-import "errors"
+import (
+	"errors"
+)
 
 const isFailure = rune('F')
 const isSuccess = rune('S')

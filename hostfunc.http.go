@@ -38,7 +38,6 @@ func HTTP(request HTTPRequest) (HTTPResponse, error) {
 		body=""
 	}	
 
-
 	// TODO: we can only have one Body...
 	var jsonHTTPRequest string
 	/*
@@ -57,8 +56,6 @@ func HTTP(request HTTPRequest) (HTTPResponse, error) {
 		jsonHTTPRequest = `{"JSONBody":{},"TextBody":"` + body + `","URI":"` + request.URI + `","Headers":` + request.Headers + `,"Method":"` + request.Method + `"}`
 	}
 	
-
-
 	jsonHTTPRequestPosition, jsonHTTPRequestSize := getBufferPosSize([]byte(jsonHTTPRequest))
 
 	// This will be use to get the response from the host
@@ -126,8 +123,3 @@ func HTTP(request HTTPRequest) (HTTPResponse, error) {
 	}, nil
 }
 
-/* Documentation
-
-
-
- */

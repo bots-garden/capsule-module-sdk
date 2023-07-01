@@ -1,6 +1,7 @@
 # Capsule Module SDK
 
 !!! info "What's new?"
+    - `v0.0.5`: ✨ Add 2 new helpers: `GetHeaders` (transform a JSON string to a map[string]string) and `SetHeaders` (transform a map[string]string to a JSON string)
     - `v0.0.4`: ✨ Add the `Success` and `Failure` functions (public functions to call `success` and `failure`) and the `StringifyHTTPResponse` function
     - `v0.0.3`: ✨ Encode `retValue.TextBody` to avoid special characters in jsonString
     - `v0.0.2`: ✨ Redis support
