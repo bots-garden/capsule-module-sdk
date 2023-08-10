@@ -34,7 +34,7 @@ func RedisSet(key string, value []byte) ([]byte, error) {
 	var responseBufferSize uint32
 
 	// Send the lessage to the host
-	hostCacheSet(
+	hostRedisSet(
 		keyPosition, keyLength,
 		valueStringPosition, valueStringLength,
 		&responseBufferPtr, &responseBufferSize)
@@ -78,7 +78,7 @@ func RedisGet(key string) ([]byte, error) {
 	var responseBufferSize uint32
 
 	// Send the lessage to the host
-	hostCacheGet(
+	hostRedisGet(
 		keyPosition, keyLength,
 		&responseBufferPtr, &responseBufferSize)
 
@@ -120,7 +120,7 @@ func RedisDel(key string) ([]byte, error) {
 	var responseBufferSize uint32
 
 	// Send the lessage to the host
-	hostCacheDel(
+	hostRedisDel(
 		keyPosition, keyLength,
 		&responseBufferPtr, &responseBufferSize)
 
@@ -157,7 +157,7 @@ func RedisKeys(filter string) ([]string, error) {
 	var responseBufferSize uint32
 
 	// Send the lessage to the host
-	hostCacheKeys(
+	hostRedisKeys(
 		filterPosition, filterLength,
 		&responseBufferPtr, &responseBufferSize)
 
